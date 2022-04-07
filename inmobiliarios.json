@@ -1,0 +1,155 @@
+{
+  "inmobiliarios": [
+    {
+      "id": "1",
+      "nombre": "Abril",
+      "tipo": "Barrio cerrado",
+      "titulares": "4",
+      "estado": "Confirmado",
+      "idCou": "a31",
+      "idMae": "45"
+    },
+    {
+      "id": "2",
+      "nombre": "Grand Bell",
+      "tipo": "Barrio cerrado",
+      "titulares": "3",
+      "estado": "Confirmado",
+      "idCou": "a32",
+      "idMae": "46"
+    },
+    {
+      "id": "3",
+      "nombre": "Los Ceibos",
+      "tipo": "Barrio cerrado",
+      "titulares": "2",
+      "estado": "Confirmado",
+      "idCou": "a3",
+      "idMae": "21"
+    },
+    {
+      "id": "4",
+      "nombre": "Los Naranjos",
+      "tipo": "Barrio cerrado",
+      "titulares": "5",
+      "estado": "No Confirmado",
+      "idCou": "a33",
+      "idMae": "22"
+    },
+    {
+      "nombre": "zona pampeana 3",
+      "tipo": "barrio cerrado",
+      "titulares": "5",
+      "estado": "confirmado",
+      "idCou": "123",
+      "idMae": "aa365",
+      "id": "5"
+    },
+    {
+      "id": "6",
+      "nombre": "Verdin",
+      "tipo": "Club de campo",
+      "titulares": "2",
+      "estado": "Descartado",
+      "idCou": "a35",
+      "idMae": "12"
+    },
+    {
+      "id": "7",
+      "nombre": "Ayacucho",
+      "tipo": "Urbano",
+      "titulares": "1",
+      "estado": "En Seguimiento",
+      "idCou": "a36",
+      "idMae": "87"
+    },
+    {
+      "id": "8",
+      "nombre": "Los Milaneses",
+      "tipo": "Urbano",
+      "titulares": "2",
+      "estado": "No Confirmado",
+      "idCou": "a37",
+      "idMae": "88"
+    },
+    {
+      "id": "9",
+      "nombre": "Campo Roca",
+      "tipo": "Barrio cerrado",
+      "titulares": "3",
+      "estado": "No Confirmado",
+      "idCou": "a38",
+      "idMae": "99"
+    },
+    {
+      "id": "10",
+      "nombre": "Guaymallén",
+      "tipo": "Urbano",
+      "titulares": "7",
+      "estado": "Confirmado",
+      "idCou": "a39",
+      "idMae": "66"
+    },
+    {
+      "nombre": "zona pampeana",
+      "tipo": "barrio cerrado",
+      "titulares": "3",
+      "estado": "confirmado",
+      "idCou": "123",
+      "idMae": "aa365",
+      "id": "11"
+    },
+    {
+      "nombre": "santiago",
+      "tipo": "Urbano",
+      "titulares": "2",
+      "estado": "Seguimiento",
+      "idCou": "321555",
+      "idMae": "654888",
+      "subestado": "",
+      "expediente": "",
+      "acta": "",
+      "num_admin": "",
+      "fecha": "",
+      "id": "14"
+    },
+    {
+      "nombre": "Montañas",
+      "tipo": "Barrio cerrado",
+      "titulares": "3",
+      "estado": "Análisis",
+      "idCou": "a34",
+      "idMae": "11",
+      "subestado": "",
+      "expediente": "",
+      "acta": "",
+      "num_admin": "",
+      "fecha": "",
+      "id": "bSajCDd"
+    },
+    {
+      "nombre": "el bosque",
+      "titulares": "4",
+      "idCou": "65444",
+      "idMae": "321111",
+      "subestado": "",
+      "expediente": "",
+      "acta": "",
+      "num_admin": "",
+      "fecha": "",
+      "id": "GKMbslm"
+    },
+    {
+      "nombre": "piripipi321321321",
+      "titulares": "2",
+      "idCou": "2222222",
+      "idMae": "2222e",
+      "subestado": "",
+      "expediente": "",
+      "acta": "",
+      "num_admin": "",
+      "fecha": "",
+      "id": "URR-6yX"
+    }
+  ]
+}
