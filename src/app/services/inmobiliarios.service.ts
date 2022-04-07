@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Inmobiliario } from 'src/assets/data/inmobiliarios';
 import { Observable } from 'rxjs';
+import { Inmobiliario } from '../interfaces/inmobiliarios';
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +27,9 @@ export class InmobiliariosService {
     return this.http.get<Inmobiliario>(`http://localhost:3000/inmobiliarios/${id}`);
   }
 
+  deleteInmobiliario(id:string): Observable<Inmobiliario>{
+    return this.http.delete<Inmobiliario>(`http://localhost:3000/inmobiliarios/${id}`);
+  }
 
 
 }

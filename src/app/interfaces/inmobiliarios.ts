@@ -10,4 +10,5 @@ export interface Inmobiliario {
     acta: string;
     num_admin: string;
     fecha: Date;
+    id: string;
   }
