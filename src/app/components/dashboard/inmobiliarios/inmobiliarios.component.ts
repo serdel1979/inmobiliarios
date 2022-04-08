@@ -29,14 +29,16 @@ export class InmobiliariosComponent implements OnInit {
   constructor(public inmobiliariosServices: InmobiliariosService, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
+    this.cargarDatos();
+  }
+
+  cargarDatos() {
     this.inmobiliariosServices.getInmobiliarios().subscribe(data => {
       this.dataSource = new MatTableDataSource<Inmobiliario>(data);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     });
   }
-
-  
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -49,15 +51,17 @@ export class InmobiliariosComponent implements OnInit {
     console.log("crear");
   }
 
-  borraInmobiliario(id:string) {
-    this.inmobiliariosServices.deleteInmobiliario(id).pipe(
-      tap(()=>{
-        this._refresh$.next();
-      })
-    );
+  borraInmobiliario(id: string) {
+    this.inmobiliariosServices.deleteInmobiliario(id).subscribe(() => {
+      this.cargarDatos();
+    });
+    this._snackBar.open("Registro eliminado","",{
+      duration: 5000,
+      horizontalPosition:'center'
+    });
   }
 
-  editarInmobiliario(id:string) {
+  editarInmobiliario(id: string) {
     console.log(id);
   }
 
