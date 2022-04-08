@@ -11,10 +11,7 @@
             </mat-form-field>
             <br>
             
-            
-         
-
-            <mat-form-field appearance="fill">
+            <mat-form-field>
                 <mat-label>Calificación</mat-label>
                 <mat-select  formControlName="tipo" >
                     <mat-option *ngFor="let item of calificaciones" [value]="item.value">{{ item.viewValue }}
@@ -23,50 +20,55 @@
             </mat-form-field>
 
             <br>
-            <mat-form-field class="ancho" appearance="fill" #input autocomplete="off">
+            <mat-form-field class="ancho"  #input autocomplete="off">
                 <mat-label>Cantidad de titulares</mat-label>
                 <input matInput formControlName="titulares">
             </mat-form-field>
             <br>
-            <mat-form-field appearance="fill" #input autocomplete="off">
+            <mat-form-field  #input autocomplete="off">
                 <mat-label>Estado</mat-label>
-                <mat-select formControlName="estado">
+                <mat-select class="ancho" formControlName="estado">
                     <mat-option *ngFor="let item of estado" [value]="item.value">{{ item.viewValue }}</mat-option>
                 </mat-select>
             </mat-form-field>
-            <div *ngIf="selectedEstado=='Asignación de valores'">
-                <mat-form-field class="ancho" appearance="fill" #input autocomplete="off">
+
+            <div *ngIf="this.form.value.estado=='Asignación de valores'">
+                <mat-form-field class="ancho" #input autocomplete="off">
                     <mat-label>Número de expediente</mat-label>
                     <input matInput formControlName="expediente">
                 </mat-form-field>
-                <mat-form-field class="ancho" appearance="fill" #input autocomplete="off">
+                <mat-form-field class="ancho"  #input autocomplete="off">
                     <mat-label>Código de acta</mat-label>
                     <input matInput formControlName="acta">
                 </mat-form-field>
             </div>
-            <div *ngIf="selectedEstado=='Acto administrativo'">
-                <mat-form-field class="ancho" appearance="fill" #input autocomplete="off">
+
+            <div *ngIf="this.form.value.estado=='Acto administrativo'">
+                <mat-form-field class="ancho"  #input autocomplete="off">
                     <mat-label>Número</mat-label>
                     <input matInput formControlName="numadmin">
                 </mat-form-field>
-                <mat-form-field class="ancho" appearance="fill" #input autocomplete="off">
+                <mat-form-field class="ancho"  #input autocomplete="off">
                     <mat-label>Fecha</mat-label>
                     <input matInput formControlName="fecha">
                 </mat-form-field>
             </div>
+            
             <br>
-            <mat-form-field class="ancho" appearance="fill" #input autocomplete="off">
+        
+            <mat-form-field class="ancho"  #input autocomplete="off">
                 <mat-label>IdCou</mat-label>
                 <input matInput formControlName="idCou">
             </mat-form-field>
             <br>
-            <mat-form-field class="ancho" appearance="fill" #input autocomplete="off">
+            <mat-form-field class="ancho"  #input autocomplete="off">
                 <mat-label>Idmae</mat-label>
                 <input matInput formControlName="idMae">
             </mat-form-field>
             <br>
             <button color="primary" [disabled]="!form.valid" mat-raised-button type="submit">Guardar</button>
         </form>
+        
         <button color="primary" style="margin-top: 10px;" mat-raised-button (click)="goBack()">Volver</button>
     </mat-card>
 

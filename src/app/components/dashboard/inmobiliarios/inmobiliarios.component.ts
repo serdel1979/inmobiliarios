@@ -55,14 +55,17 @@ export class InmobiliariosComponent implements OnInit {
     this.inmobiliariosServices.deleteInmobiliario(id).subscribe(() => {
       this.cargarDatos();
     });
-    this._snackBar.open("Registro eliminado","",{
+    this._snackBar.open("Registro eliminado", "", {
       duration: 5000,
-      horizontalPosition:'center'
+      horizontalPosition: 'center'
     });
   }
+
+
 
   editarInmobiliario(id: string) {
     console.log(id);
   }
+
 
 }

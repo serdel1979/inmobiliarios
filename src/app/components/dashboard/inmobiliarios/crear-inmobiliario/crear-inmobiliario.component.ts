@@ -27,13 +27,13 @@ export class CrearInmobiliarioComponent implements OnInit {
   selected = 'Urbano';
 
   estado = [
-    { value: 'enValores', viewValue: 'Asignación de valores' },
-    { value: 'enActoAdmin', viewValue: 'Acto administrativo' },
-    { value: 'enAnalisis', viewValue: 'Análisis' },
-    { value: 'enSeguimiento', viewValue: 'Seguimiento' },
-    { value: 'descartado', viewValue: 'Descartado' }
+    { value: 'Asignación de valores', viewValue: 'Asignación de valores' },
+    { value: 'Acto administrativo', viewValue: 'Acto administrativo' },
+    { value: 'Análisis', viewValue: 'Análisis' },
+    { value: 'Seguimiento', viewValue: 'Seguimiento' },
+    { value: 'Descartado', viewValue: 'Descartado' }
   ]
-  selectedEstado = 'Descartado';
+  selectedEstado = '';
 
   constructor(private fb: FormBuilder, private router: Router, private service: InmobiliariosService, private activate: ActivatedRoute) { 
     this.form = this.fb.group({
