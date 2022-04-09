@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './components/login/login.component';
 import { SharedModule } from './components/shared/shared.module';
+import { DialogoConfirmacionComponent } from './components/dialogo-confirmacion/dialogo-confirmacion.component';
 
 //componentes de material
 
@@ -16,6 +17,7 @@ import { SharedModule } from './components/shared/shared.module';
   declarations: [
     AppComponent,
     LoginComponent,
+    DialogoConfirmacionComponent,
   ],
   imports: [
     BrowserModule,

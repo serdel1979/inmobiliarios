@@ -6,6 +6,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { Inmobiliario } from 'src/app/interfaces/inmobiliarios';
 import { InmobiliariosService } from 'src/app/services/inmobiliarios.service';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogoConfirmacionComponent } from 'src/app/components/dialogo-confirmacion/dialogo-confirmacion.component';
 
 @Component({
   selector: 'app-inmobiliarios',
@@ -28,7 +30,7 @@ export class InmobiliariosComponent implements OnInit {
   
 
 
-  constructor(public inmobiliariosServices: InmobiliariosService, private _snackBar: MatSnackBar, private router: Router) { }
+  constructor(public dialogo: MatDialog, public inmobiliariosServices: InmobiliariosService, private _snackBar: MatSnackBar, private router: Router) { }
 
   ngOnInit(): void {
     this.cargarDatos();
@@ -53,13 +55,27 @@ export class InmobiliariosComponent implements OnInit {
     console.log("crear");
   }
 
+
+  mostrarDialogo(id:string): void {
+    this.dialogo
+      .open(DialogoConfirmacionComponent, {
+        data: `¿Seguro de borrar el registro inmobiliario?`
+      })
+      .afterClosed()
+      .subscribe((confirmado: Boolean) => {
+        if (confirmado) {
+          this.borraInmobiliario(id);
+          this._snackBar.open("Registro eliminado", "", {
+            duration: 1500,
+            horizontalPosition: 'center'
+          });
+        } 
+      });
+  }
+
   borraInmobiliario(id: string) {
     this.inmobiliariosServices.deleteInmobiliario(id).subscribe(() => {
       this.cargarDatos();
-    });
-    this._snackBar.open("Registro eliminado", "", {
-      duration: 5000,
-      horizontalPosition: 'center'
     });
   }
 

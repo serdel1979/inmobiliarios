@@ -15,6 +15,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatSelectModule } from '@angular/material/select';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatSortModule,
     MatCardModule,
     MatGridListModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDialogModule
   ],
   exports: [
     CommonModule,
@@ -53,7 +55,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatSortModule,
     MatCardModule,
     MatGridListModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDialogModule
   ]
 })
 export class SharedModule { }

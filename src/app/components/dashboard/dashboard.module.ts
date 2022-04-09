@@ -15,7 +15,7 @@ import { EditarInmobiliarioComponent } from './inmobiliarios/editar-inmobiliario
     InmobiliariosComponent,
     NavbarComponent,
     CrearInmobiliarioComponent,
-    EditarInmobiliarioComponent
+    EditarInmobiliarioComponent,
   ],
   imports: [
     CommonModule,

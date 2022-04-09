@@ -1,37 +1,6 @@
 {
   "inmobiliarios": [
     {
-      "nombre": "Abril",
-      "tipo": "Barrio cerrado",
-      "titulares": "3",
-      "estado": "Acto administrativo",
-      "idCou": "a31",
-      "idMae": "454",
-      "num_admin": "222245",
-      "fecha": "23/12/2005",
-      "id": "1"
-    },
-    {
-      "nombre": "Grand Bell",
-      "tipo": "Urbano",
-      "titulares": "3",
-      "estado": "Acto administrativo",
-      "idCou": "a32",
-      "idMae": "46",
-      "num_admin": "321100",
-      "fecha": "22/03/2009",
-      "id": "2"
-    },
-    {
-      "id": "3",
-      "nombre": "Los Ceibos",
-      "tipo": "Barrio cerrado",
-      "titulares": "2",
-      "estado": "Confirmado",
-      "idCou": "a3",
-      "idMae": "21"
-    },
-    {
       "nombre": "Los Naranjos",
       "tipo": "Club de chacra",
       "titulares": "5",
@@ -68,18 +37,18 @@
       "id": "11"
     },
     {
-      "nombre": "Barrio los naranjos rosas",
-      "tipo": "Club de chacra",
-      "titulares": "5",
-      "estado": "Seguimiento",
-      "idCou": "32111",
-      "idMae": "322",
+      "nombre": "Abril",
+      "tipo": "Barrio cerrado",
+      "titulares": "10",
+      "estado": "Análisis",
+      "idCou": "3222",
+      "idMae": "1654",
       "subestado": "",
       "expediente": "",
       "acta": "",
       "num_admin": "",
       "fecha": "",
-      "id": "Ehwtcyw"
+      "id": "6pkFpdR"
     }
   ]
 }
