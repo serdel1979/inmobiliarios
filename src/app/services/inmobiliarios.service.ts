@@ -22,6 +22,10 @@ export class InmobiliariosService {
     return this.http.post<Inmobiliario>('http://localhost:3000/inmobiliarios', inmobiliario);
   }
 
+  editaInmobiliario(inmobiliario: Inmobiliario, id:string){
+    return this.http.put<Inmobiliario>(`http://localhost:3000/inmobiliarios/${id}`, inmobiliario);
+  }
+
 
   getInmobiliario(id:string): Observable<Inmobiliario>{
     return this.http.get<Inmobiliario>(`http://localhost:3000/inmobiliarios/${id}`);
@@ -29,7 +33,6 @@ export class InmobiliariosService {
 
   deleteInmobiliario(id:string): Observable<Inmobiliario>{
     return this.http.delete<Inmobiliario>(`http://localhost:3000/inmobiliarios/${id}`);
-
   }
 
 

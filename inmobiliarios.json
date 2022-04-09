@@ -1,22 +1,26 @@
 {
   "inmobiliarios": [
     {
-      "id": "1",
       "nombre": "Abril",
       "tipo": "Barrio cerrado",
-      "titulares": "4",
-      "estado": "Confirmado",
+      "titulares": "3",
+      "estado": "Acto administrativo",
       "idCou": "a31",
-      "idMae": "45"
+      "idMae": "454",
+      "num_admin": "222245",
+      "fecha": "23/12/2005",
+      "id": "1"
     },
     {
-      "id": "2",
       "nombre": "Grand Bell",
-      "tipo": "Barrio cerrado",
+      "tipo": "Urbano",
       "titulares": "3",
-      "estado": "Confirmado",
+      "estado": "Acto administrativo",
       "idCou": "a32",
-      "idMae": "46"
+      "idMae": "46",
+      "num_admin": "321100",
+      "fecha": "22/03/2009",
+      "id": "2"
     },
     {
       "id": "3",
@@ -28,13 +32,13 @@
       "idMae": "21"
     },
     {
-      "id": "4",
       "nombre": "Los Naranjos",
-      "tipo": "Barrio cerrado",
+      "tipo": "Club de chacra",
       "titulares": "5",
       "estado": "No Confirmado",
       "idCou": "a33",
-      "idMae": "22"
+      "idMae": "22",
+      "id": "4"
     },
     {
       "id": "9",
@@ -56,7 +60,7 @@
     },
     {
       "nombre": "zona pampeana",
-      "tipo": "barrio cerrado",
+      "tipo": "Barrio cerrado",
       "titulares": "3",
       "estado": "confirmado",
       "idCou": "123",
@@ -64,32 +68,18 @@
       "id": "11"
     },
     {
-      "nombre": "Barrio los naranjos",
-      "tipo": "chacra",
+      "nombre": "Barrio los naranjos rosas",
+      "tipo": "Club de chacra",
       "titulares": "5",
-      "estado": "enSeguimiento",
+      "estado": "Seguimiento",
       "idCou": "32111",
-      "idMae": "321111",
+      "idMae": "322",
       "subestado": "",
       "expediente": "",
       "acta": "",
       "num_admin": "",
       "fecha": "",
       "id": "Ehwtcyw"
-    },
-    {
-      "nombre": "Barrio Los Pingos",
-      "tipo": "cerrado",
-      "titulares": "5",
-      "estado": "Análisis",
-      "idCou": "32111",
-      "idMae": "65444",
-      "subestado": "",
-      "expediente": "",
-      "acta": "",
-      "num_admin": "",
-      "fecha": "",
-      "id": "MsQygeA"
     }
   ]
 }

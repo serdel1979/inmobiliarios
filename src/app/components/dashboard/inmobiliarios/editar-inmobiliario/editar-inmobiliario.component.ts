@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Inmobiliario } from 'src/app/interfaces/inmobiliarios';
 import { InmobiliariosService } from 'src/app/services/inmobiliarios.service';
 
@@ -11,25 +11,39 @@ import { InmobiliariosService } from 'src/app/services/inmobiliarios.service';
 })
 export class EditarInmobiliarioComponent implements OnInit {
 
-  public form: FormGroup;
+  form!: FormGroup;
 
 
   calificaciones = [
-    { value: 'clubCampo', viewValue: 'Club de campo' },
-    { value: 'cerrado', viewValue: 'Barrio cerrado' },
-    { value: 'chacra', viewValue: 'Club de chacra' },
-    { value: 'urbano', viewValue: 'Urbano' },
+    { value: 'Club de campo', viewValue: 'Club de campo' },
+    { value: 'Barrio cerrado', viewValue: 'Barrio cerrado' },
+    { value: 'Club de chacra', viewValue: 'Club de chacra' },
+    { value: 'Urbano', viewValue: 'Urbano' },
   ];
+
+
+  estado = [
+    { value: 'Asignación de valores', viewValue: 'Asignación de valores' },
+    { value: 'Acto administrativo', viewValue: 'Acto administrativo' },
+    { value: 'Análisis', viewValue: 'Análisis' },
+    { value: 'Seguimiento', viewValue: 'Seguimiento' },
+    { value: 'Descartado', viewValue: 'Descartado' }
+  ]
 
   inmobiliario!: Inmobiliario;
   id!: string;
   inmobiliariosServices: any;
 
-  constructor(private fb: FormBuilder, private rutaActiva: ActivatedRoute, private service: InmobiliariosService) { 
+  constructor(private fb: FormBuilder, private rutaActiva: ActivatedRoute, private service: InmobiliariosService, private router: Router) { 
+   
+  }
+
+  ngOnInit(): void {
+    this.id = this.rutaActiva.snapshot.params['id'];
     this.form = this.fb.group({
       nombre: ['', Validators.required],
       tipo: ['', Validators.required],
-      titulares: [''],
+      titulares: ['', Validators.required],
       estado: [''],
       idCou: [''],
       idMae: [''],
@@ -39,39 +53,35 @@ export class EditarInmobiliarioComponent implements OnInit {
       num_admin: [''],
       fecha: [''],
     })
-  }
-
-  ngOnInit(): void {
-    this.id = this.rutaActiva.snapshot.params['id'];
+    
     this.service.getInmobiliario(this.id).subscribe((data:Inmobiliario) => {
       this.inmobiliario=data;
-      this.form = this.fb.group({
-        nombre: [this.inmobiliario['nombre'], Validators.required],
-        tipo: [this.inmobiliario['tipo'], Validators.required],
-        titulares: [this.inmobiliario['titulares']],
-        estado: [this.inmobiliario['estado']],
-        idCou: [this.inmobiliario['idCou']],
-        idMae: [this.inmobiliario['idMae']],
-        subestado: [this.inmobiliario['subestado']],
-        expediente: [this.inmobiliario['expediente']],
-        acta: [this.inmobiliario['acta']],
-        num_admin: [this.inmobiliario['num_admin']],
-        fecha: [this.inmobiliario['fecha']],
-      })
+      this.form.controls['nombre'].setValue(this.inmobiliario['nombre']);
+      this.form.controls['tipo'].setValue(this.inmobiliario['tipo']);
+      this.form.controls['titulares'].setValue(this.inmobiliario['titulares']);
+      this.form.controls['estado'].setValue(this.inmobiliario['estado']);
+      this.form.controls['idCou'].setValue(this.inmobiliario['idCou']);
+      this.form.controls['idMae'].setValue(this.inmobiliario['idMae']);
+      this.form.controls['subestado'].setValue(this.inmobiliario['subestado']);
+      this.form.controls['expediente'].setValue(this.inmobiliario['expediente']);
+      this.form.controls['acta'].setValue(this.inmobiliario['acta']);
+      this.form.controls['num_admin'].setValue(this.inmobiliario['num_admin']);
+      this.form.controls['fecha'].setValue(this.inmobiliario['fecha']);
     });
-    //this.form.value.nombre = this.inmobiliario['nombre'];
-    //this.form.value.tipo = this.inmobiliario['tipo'];
-    //this.form.value.titulares = this.inmobiliario['titulares'];
-    //this.form.value.estado = this.inmobiliario['estado'];
-    //this.form.value.idCou = this.inmobiliario['idCou'];
-    //this.form.value.idMae = this.inmobiliario['idMae'];
-    //this.form.value.subestado = this.inmobiliario['subestado'];
-    //this.form.value.expediente = this.inmobiliario['expediente'];
-    //this.form.value.acta = this.inmobiliario['acta'];
-    //this.form.value.num_admin = this.inmobiliario['num_admin'];
-    //this.form.value.fecha = this.inmobiliario['fecha'];
-    console.log(this.form.value);
-    
   }
+
+
+  goBack() {
+    this.router.navigate(['dashboard/inmobiliarios']);
+  }
+
+  public guardar() {
+    this.service.editaInmobiliario(this.form.value,this.id)
+      .subscribe(data => {
+        console.log(this.form.value);
+        this.goBack();
+      })
+  }
+
 
 }

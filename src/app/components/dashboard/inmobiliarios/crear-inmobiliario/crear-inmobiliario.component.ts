@@ -15,10 +15,10 @@ export class CrearInmobiliarioComponent implements OnInit {
 
 
   calificaciones = [
-    { value: 'clubCampo', viewValue: 'Club de campo' },
-    { value: 'cerrado', viewValue: 'Barrio cerrado' },
-    { value: 'chacra', viewValue: 'Club de chacra' },
-    { value: 'urbano', viewValue: 'Urbano' },
+    { value: 'Club de campo', viewValue: 'Club de campo' },
+    { value: 'Barrio cerrado', viewValue: 'Barrio cerrado' },
+    { value: 'Club de chacra', viewValue: 'Club de chacra' },
+    { value: 'Urbano', viewValue: 'Urbano' },
   ];
 
   selected = 'Urbano';
