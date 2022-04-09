@@ -10,7 +10,7 @@ const routes: Routes = [
     {path: '', component: InmobiliariosComponent},
     {path: 'inmobiliarios', component: InmobiliariosComponent},
     {path: 'crear_inmobiliario', component: CrearInmobiliarioComponent},
-    {path: 'editar_inmobiliario', component: EditarInmobiliarioComponent}
+    {path: 'editar_inmobiliario/:id', component: EditarInmobiliarioComponent}
   ]}
 ];
 

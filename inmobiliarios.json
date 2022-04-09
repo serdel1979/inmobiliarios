@@ -37,15 +37,6 @@
       "idMae": "22"
     },
     {
-      "id": "7",
-      "nombre": "Ayacucho",
-      "tipo": "Urbano",
-      "titulares": "1",
-      "estado": "En Seguimiento",
-      "idCou": "a36",
-      "idMae": "87"
-    },
-    {
       "id": "9",
       "nombre": "Campo Roca",
       "tipo": "Barrio cerrado",
@@ -87,32 +78,18 @@
       "id": "Ehwtcyw"
     },
     {
-      "nombre": "Los bananos",
-      "tipo": "chacra",
+      "nombre": "Barrio Los Pingos",
+      "tipo": "cerrado",
       "titulares": "5",
-      "estado": "enAnalisis",
-      "idCou": "3266",
-      "idMae": "98777",
+      "estado": "Análisis",
+      "idCou": "32111",
+      "idMae": "65444",
       "subestado": "",
       "expediente": "",
       "acta": "",
       "num_admin": "",
       "fecha": "",
-      "id": "VTjoilQ"
-    },
-    {
-      "nombre": "bananas",
-      "tipo": "chacra",
-      "titulares": "1",
-      "estado": "enSeguimiento",
-      "idCou": "26555",
-      "idMae": "654444",
-      "subestado": "",
-      "expediente": "",
-      "acta": "",
-      "num_admin": "",
-      "fecha": "",
-      "id": "j6ZUJRV"
+      "id": "MsQygeA"
     }
   ]
 }

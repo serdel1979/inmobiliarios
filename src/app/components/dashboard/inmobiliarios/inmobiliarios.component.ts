@@ -3,7 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { tap } from 'rxjs';
+import { Router } from '@angular/router';
 import { Inmobiliario } from 'src/app/interfaces/inmobiliarios';
 import { InmobiliariosService } from 'src/app/services/inmobiliarios.service';
 
@@ -15,6 +15,7 @@ import { InmobiliariosService } from 'src/app/services/inmobiliarios.service';
 export class InmobiliariosComponent implements OnInit {
 
   listInmobiliarios: Inmobiliario[] = [];
+  inmobiliario!: Inmobiliario;
 
   displayedColumns: string[] = ['nombre', 'tipo', 'titulares', 'estado', 'idCou', 'idMae', 'Acciones'];
 
@@ -23,10 +24,11 @@ export class InmobiliariosComponent implements OnInit {
   @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
   //@ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-  private _refresh$: any;
+ 
+  
 
 
-  constructor(public inmobiliariosServices: InmobiliariosService, private _snackBar: MatSnackBar) { }
+  constructor(public inmobiliariosServices: InmobiliariosService, private _snackBar: MatSnackBar, private router: Router) { }
 
   ngOnInit(): void {
     this.cargarDatos();
@@ -64,7 +66,7 @@ export class InmobiliariosComponent implements OnInit {
 
 
   editarInmobiliario(id: string) {
-    console.log(id);
+    this.router.navigate([`/dashboard/editar_inmobiliario/${id}`]);
   }
 
 

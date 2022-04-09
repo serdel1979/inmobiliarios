@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import {  Router } from '@angular/router';
 import { InmobiliariosService } from 'src/app/services/inmobiliarios.service';
-import { Inmobiliario } from '../../../../interfaces/inmobiliarios';
 
 @Component({
   selector: 'app-crear-inmobiliario',
@@ -13,8 +12,6 @@ export class CrearInmobiliarioComponent implements OnInit {
 
 
   public form: FormGroup;
-
-  public inmobiliario: any;
 
 
   calificaciones = [
@@ -35,7 +32,7 @@ export class CrearInmobiliarioComponent implements OnInit {
   ]
   selectedEstado = '';
 
-  constructor(private fb: FormBuilder, private router: Router, private service: InmobiliariosService, private activate: ActivatedRoute) { 
+  constructor(private fb: FormBuilder, private router: Router, private service: InmobiliariosService) { 
     this.form = this.fb.group({
       nombre: ['', Validators.required],
       tipo: ['', Validators.required],
