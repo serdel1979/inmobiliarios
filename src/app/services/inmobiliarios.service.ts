@@ -13,26 +13,28 @@ export class InmobiliariosService {
   AllInmobiliarios: Inmobiliario[] = [];
 
 
+  //localhost:3000/api/v1/real_state
+
   getInmobiliarios(): Observable<Inmobiliario[]>{
-    return this.http.get<Inmobiliario[]>('http://localhost:3000/inmobiliarios');
+    return this.http.get<Inmobiliario[]>('http://localhost:3000/api/v1/real_state');
   }
 
   
   agregaInmobiliario(inmobiliario: Inmobiliario){
-    return this.http.post<Inmobiliario>('http://localhost:3000/inmobiliarios', inmobiliario);
+    return this.http.post<Inmobiliario>('http://localhost:3000/api/v1/real_state', inmobiliario);
   }
 
   editaInmobiliario(inmobiliario: Inmobiliario, id:string){
-    return this.http.put<Inmobiliario>(`http://localhost:3000/inmobiliarios/${id}`, inmobiliario);
+    return this.http.put<Inmobiliario>(`http://localhost:3000/api/v1/real_state/${id}`, inmobiliario);
   }
 
 
   getInmobiliario(id:string): Observable<Inmobiliario>{
-    return this.http.get<Inmobiliario>(`http://localhost:3000/inmobiliarios/${id}`);
+    return this.http.get<Inmobiliario>(`http://localhost:3000/api/v1/real_state/${id}`);
   }
 
   deleteInmobiliario(id:string): Observable<Inmobiliario>{
-    return this.http.delete<Inmobiliario>(`http://localhost:3000/inmobiliarios/${id}`);
+    return this.http.delete<Inmobiliario>(`http://localhost:3000/api/v1/real_state/${id}`);
   }
 
 
