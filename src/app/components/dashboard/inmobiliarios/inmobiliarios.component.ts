@@ -19,7 +19,7 @@ export class InmobiliariosComponent implements OnInit {
   listInmobiliarios: Inmobiliario[] = [];
   inmobiliario!: Inmobiliario;
 
-  displayedColumns: string[] = ['nombre', 'tipo', 'titulares', 'estado', 'idCou', 'idMae', 'Acciones'];
+  displayedColumns: string[] = ['nombre', 'distrito','tipo', 'estado', 'idCou', 'idMae', 'Acciones'];
 
   dataSource!: MatTableDataSource<any>;
 
@@ -41,6 +41,7 @@ export class InmobiliariosComponent implements OnInit {
       this.dataSource = new MatTableDataSource<Inmobiliario>(data);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
+      console.log(data);
     });
   }
 

@@ -28,15 +28,6 @@
       "idMae": "66"
     },
     {
-      "nombre": "zona pampeana",
-      "tipo": "Barrio cerrado",
-      "titulares": "3",
-      "estado": "confirmado",
-      "idCou": "123",
-      "idMae": "aa365",
-      "id": "11"
-    },
-    {
       "nombre": "Abril",
       "tipo": "Barrio cerrado",
       "titulares": "10",
