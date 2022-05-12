@@ -1,14 +1,12 @@
 export interface Inmobiliario {
-    nombre: string;
-    tipo: string;
-    titulares: number;
-    estado: string;
-    idCou: string;
-    idMae: string;
-    subestado: string;
-    expediente: string;
-    acta: string;
-    num_admin: string;
-    fecha: Date;
-    id: string;
+  name: string;
+  type: number;
+  id_cou: number;
+  id_mae: number;
+  priority: number;
+  register_source: string;
+  current_state: string;
+  type_real_state: string;
+  district: string;
+  holders_count: number;
   }

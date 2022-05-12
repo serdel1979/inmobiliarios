@@ -41,32 +41,31 @@ export class EditarInmobiliarioComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.rutaActiva.snapshot.params['id'];
     this.form = this.fb.group({
-      nombre: ['', Validators.required],
-      tipo: ['', Validators.required],
-      titulares: ['', Validators.required],
-      estado: [''],
-      idCou: [''],
-      idMae: [''],
-      subestado: [''],
-      expediente: [''],
-      acta: [''],
-      num_admin: [''],
-      fecha: [''],
+      name: ['', Validators.required],
+      type: ['', Validators.required],
+      id_cou: ['', Validators.required],
+      priority: [''],
+      register_source: [''],
+      current_state: [''],
+      type_real_state: [''],
+      district: [''],
+      id_mae: [''],
+      holders_count: [''],
     })
     
     this.service.getInmobiliario(this.id).subscribe((data:Inmobiliario) => {
       this.inmobiliario=data;
-      this.form.controls['nombre'].setValue(this.inmobiliario['nombre']);
-      this.form.controls['tipo'].setValue(this.inmobiliario['tipo']);
-      this.form.controls['titulares'].setValue(this.inmobiliario['titulares']);
-      this.form.controls['estado'].setValue(this.inmobiliario['estado']);
-      this.form.controls['idCou'].setValue(this.inmobiliario['idCou']);
-      this.form.controls['idMae'].setValue(this.inmobiliario['idMae']);
-      this.form.controls['subestado'].setValue(this.inmobiliario['subestado']);
-      this.form.controls['expediente'].setValue(this.inmobiliario['expediente']);
-      this.form.controls['acta'].setValue(this.inmobiliario['acta']);
-      this.form.controls['num_admin'].setValue(this.inmobiliario['num_admin']);
-      this.form.controls['fecha'].setValue(this.inmobiliario['fecha']);
+      this.form.controls['name'].setValue(this.inmobiliario['name']);
+      this.form.controls['type'].setValue(this.inmobiliario['type']);
+      this.form.controls['id_cou'].setValue(this.inmobiliario['id_cou']);
+      this.form.controls['priority'].setValue(this.inmobiliario['priority']);
+      this.form.controls['register_source'].setValue(this.inmobiliario['register_source']);
+      this.form.controls['current_state'].setValue(this.inmobiliario['current_state']);
+      this.form.controls['type_real_state'].setValue(this.inmobiliario['type_real_state']);
+      this.form.controls['district'].setValue(this.inmobiliario['district']);
+      this.form.controls['id_mae'].setValue(this.inmobiliario['id_mae']);
+      this.form.controls['holders_count'].setValue(this.inmobiliario['holders_count']);
+
     });
   }
 
