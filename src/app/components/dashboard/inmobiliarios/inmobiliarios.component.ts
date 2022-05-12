@@ -8,6 +8,7 @@ import { Inmobiliario } from 'src/app/interfaces/inmobiliarios';
 import { InmobiliariosService } from 'src/app/services/inmobiliarios.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogoConfirmacionComponent } from 'src/app/components/dialogo-confirmacion/dialogo-confirmacion.component';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-inmobiliarios',
@@ -74,9 +75,12 @@ export class InmobiliariosComponent implements OnInit {
       });
   }
 
-  borraInmobiliario(id: string) {
+  borraInmobiliario(id: string):void{
     this.inmobiliariosServices.deleteInmobiliario(id).subscribe(() => {
       this.cargarDatos();
+    },
+    err => {
+      alert(err.error.message);
     });
   }
 

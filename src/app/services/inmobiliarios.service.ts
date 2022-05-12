@@ -33,8 +33,8 @@ export class InmobiliariosService {
     return this.http.get<Inmobiliario>(`http://localhost:3000/api/v1/real_state/${id}`);
   }
 
-  deleteInmobiliario(id:string): Observable<Inmobiliario>{
-    return this.http.delete<Inmobiliario>(`http://localhost:3000/api/v1/real_state/${id}`);
+  deleteInmobiliario(id:string):Observable<any>{
+    return this.http.delete<any>(`http://localhost:3000/api/v1/real_state/${id}`);
   }
 
 
