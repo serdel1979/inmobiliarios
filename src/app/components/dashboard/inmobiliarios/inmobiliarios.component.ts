@@ -42,7 +42,6 @@ export class InmobiliariosComponent implements OnInit {
       this.dataSource = new MatTableDataSource<Inmobiliario>(data);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
-      console.log(data);
     });
   }
 
@@ -67,10 +66,6 @@ export class InmobiliariosComponent implements OnInit {
       .subscribe((confirmado: Boolean) => {
         if (confirmado) {
           this.borraInmobiliario(id);
-          this._snackBar.open("Registro eliminado", "", {
-            duration: 1500,
-            horizontalPosition: 'center'
-          });
         } 
       });
   }
@@ -80,7 +75,14 @@ export class InmobiliariosComponent implements OnInit {
       this.cargarDatos();
     },
     err => {
-      alert(err.error.message);
+      this._snackBar.open(err.error.message, "", {
+        duration: 1500,
+        horizontalPosition: 'center'
+      });
+    });
+    this._snackBar.open("Registro eliminado", "", {
+      duration: 1500,
+      horizontalPosition: 'center'
     });
   }
 
