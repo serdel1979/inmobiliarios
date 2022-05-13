@@ -75,11 +75,11 @@ export class InmobiliariosComponent implements OnInit {
       this.cargarDatos();
     },
     err => {
-      this._snackBar.open(err.error.message, "", {
-        duration: 1500,
+      this._snackBar.open(err.error.message,'Fail', {
+        duration: 3000,
         horizontalPosition: 'center'
       });
-    });
+    }),
     this._snackBar.open("Registro eliminado", "", {
       duration: 1500,
       horizontalPosition: 'center'
