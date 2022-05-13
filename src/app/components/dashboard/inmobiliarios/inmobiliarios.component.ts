@@ -70,17 +70,18 @@ export class InmobiliariosComponent implements OnInit {
       });
   }
 
-  borraInmobiliario(id: string):void{
-    this.inmobiliariosServices.deleteInmobiliario(id).subscribe(() => {
+  async borraInmobiliario(id: string):Promise<void>{
+   await this.inmobiliariosServices.deleteInmobiliario(id).subscribe(() => {
       this.cargarDatos();
     },
     err => {
-      this._snackBar.open(err.error.message,'Fail', {
+      this._snackBar.open(err.error.message,"Fail", {
         duration: 3000,
         horizontalPosition: 'center'
       });
+      return;
     }),
-    this._snackBar.open("Registro eliminado", "", {
+    this._snackBar.open("Registro eliminado", "Siccess", {
       duration: 1500,
       horizontalPosition: 'center'
     });
