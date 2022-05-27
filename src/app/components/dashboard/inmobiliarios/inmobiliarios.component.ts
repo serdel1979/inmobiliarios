@@ -9,6 +9,7 @@ import { InmobiliariosService } from 'src/app/services/inmobiliarios.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogoConfirmacionComponent } from 'src/app/components/dialogo-confirmacion/dialogo-confirmacion.component';
 import { Observable } from 'rxjs';
+import { TypeRealState } from 'src/app/interfaces/type_real_state';
 
 @Component({
   selector: 'app-inmobiliarios',
@@ -19,6 +20,7 @@ export class InmobiliariosComponent implements OnInit {
 
   listInmobiliarios: Inmobiliario[] = [];
   inmobiliario!: Inmobiliario;
+  type_real_state: TypeRealState[] = [];
 
   displayedColumns: string[] = ['nombre', 'distrito','tipo', 'estado', 'idCou', 'idMae', 'Acciones'];
 

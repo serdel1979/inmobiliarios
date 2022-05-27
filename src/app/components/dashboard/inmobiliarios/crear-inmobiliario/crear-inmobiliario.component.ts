@@ -32,23 +32,26 @@ export class CrearInmobiliarioComponent implements OnInit {
   ]
   selectedEstado = '';
 
+
   constructor(private fb: FormBuilder, private router: Router, private service: InmobiliariosService) { 
     this.form = this.fb.group({
-      nombre: ['', Validators.required],
-      tipo: ['', Validators.required],
-      titulares: [''],
-      estado: [''],
-      idCou: [''],
-      idMae: [''],
-      subestado: [''],
-      expediente: [''],
-      acta: [''],
-      num_admin: [''],
-      fecha: [''],
+      name: ['', Validators.required],
+      type: ['', Validators.required],
+      id_cou: [''],
+      priority: [''],
+      register_source: [''],
+      current_state: [''],
+      type_real_state: [''],
+      district: [''],
+      id_mae: [''],
+      holders_count: [''],
     })
   }
 
   ngOnInit(): void {
+     this.service.getTypeRealState().subscribe(data=>{
+       console.log(data);
+     })
   }
 
 

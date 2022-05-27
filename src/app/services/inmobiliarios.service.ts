@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { elementAt, Observable } from 'rxjs';
 import { Inmobiliario } from '../interfaces/inmobiliarios';
+import { TypeRealState } from '../interfaces/type_real_state';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,10 @@ export class InmobiliariosService {
     return this.http.get<Inmobiliario[]>('http://localhost:3000/api/v1/real_state');
   }
 
-  
+  getTypeRealState(): Observable<TypeRealState[]>{
+    return this.http.get<TypeRealState[]>('http://localhost:3000/api/v1/real_state/type_real_state');
+  }
+   
   agregaInmobiliario(inmobiliario: Inmobiliario){
     return this.http.post<Inmobiliario>('http://localhost:3000/api/v1/real_state', inmobiliario);
   }
