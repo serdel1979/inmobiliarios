@@ -13,7 +13,7 @@
             <mat-form-field appearance="fill">
                 <mat-label>Calificación</mat-label>
                 <mat-select formControlName="type">
-                    <mat-option *ngFor="let item of calificaciones" [value]="item.value">{{ item.viewValue }}
+                    <mat-option *ngFor="let item of types" [value]="types">{{ item.description }}
                     </mat-option>
                 </mat-select>
             </mat-form-field>

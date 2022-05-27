@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {  Router } from '@angular/router';
 import { InmobiliariosService } from 'src/app/services/inmobiliarios.service';
+import { TypeRealState } from 'src/app/interfaces/type_real_state';
 
 @Component({
   selector: 'app-crear-inmobiliario',
@@ -22,6 +23,8 @@ export class CrearInmobiliarioComponent implements OnInit {
   ];
 
   selected = 'Urbano';
+
+  types : TypeRealState[] = [];
 
   estado = [
     { value: 'Asignación de valores', viewValue: 'Asignación de valores' },
@@ -50,7 +53,8 @@ export class CrearInmobiliarioComponent implements OnInit {
 
   ngOnInit(): void {
      this.service.getTypeRealState().subscribe(data=>{
-       console.log(data);
+       this.types = data;
+       console.log(this.types);
      })
   }
 
