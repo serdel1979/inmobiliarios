@@ -11,9 +11,17 @@
             </mat-form-field>
             <br>
             <mat-form-field appearance="fill">
-                <mat-label>Calificación</mat-label>
-                <mat-select formControlName="type">
-                    <mat-option *ngFor="let item of types" [value]="types">{{ item.description }}
+                <mat-label>Tipo</mat-label>
+                <mat-select formControlName="type_real_state">
+                    <mat-option *ngFor="let item of types" [value]="item">{{ item.description }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <br>
+            <mat-form-field appearance="fill">
+                <mat-label>Distrito</mat-label>
+                <mat-select formControlName="district">
+                    <mat-option *ngFor="let item of districts" [value]="item">{{ item.name }}
                     </mat-option>
                 </mat-select>
             </mat-form-field>
@@ -33,6 +41,11 @@
             <mat-form-field class="ancho" #input autocomplete="off" appearance="fill">
                 <mat-label>Idmae</mat-label>
                 <input autocomplete="off" matInput formControlName="id_mae">
+            </mat-form-field>
+            <br>
+            <mat-form-field class="ancho" #input autocomplete="off" appearance="fill">
+                <mat-label>Prioridad</mat-label>
+                <input autocomplete="off" matInput formControlName="priority">
             </mat-form-field>
             <br>
             <button color="primary" [disabled]="!form.valid" mat-raised-button type="submit">Guardar</button>

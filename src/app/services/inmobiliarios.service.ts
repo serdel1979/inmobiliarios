@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { elementAt, Observable } from 'rxjs';
 import { Inmobiliario } from '../interfaces/inmobiliarios';
 import { TypeRealState } from '../interfaces/type_real_state';
+import { District } from '../interfaces/distritos';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +25,11 @@ export class InmobiliariosService {
     return this.http.get<TypeRealState[]>('http://localhost:3000/api/v1/real_state/type_real_state');
   }
    
+
+  getDistricts(): Observable<District[]>{
+    return this.http.get<District[]>('http://localhost:3000/api/v1/real_state/districts');
+  }
+
   agregaInmobiliario(inmobiliario: Inmobiliario){
     return this.http.post<Inmobiliario>('http://localhost:3000/api/v1/real_state', inmobiliario);
   }
