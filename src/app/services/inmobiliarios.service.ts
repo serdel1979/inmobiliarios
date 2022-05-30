@@ -14,37 +14,37 @@ export class InmobiliariosService {
 
   AllInmobiliarios: Inmobiliario[] = [];
 
-
+  private baseURL: string = window.location.protocol + '//' + window.location.host;
   //localhost:3000/api/v1/real_state
 
   getInmobiliarios(): Observable<Inmobiliario[]>{
-    return this.http.get<Inmobiliario[]>('http://localhost:3000/api/v1/real_state');
+    return this.http.get<Inmobiliario[]>(this.baseURL+'/api/v1/real_state');
   }
 
   getTypeRealState(): Observable<TypeRealState[]>{
-    return this.http.get<TypeRealState[]>('http://localhost:3000/api/v1/real_state/type_real_state');
+    return this.http.get<TypeRealState[]>(this.baseURL+'/api/v1/real_state/type_real_state');
   }
    
 
   getDistricts(): Observable<District[]>{
-    return this.http.get<District[]>('http://localhost:3000/api/v1/real_state/districts');
+    return this.http.get<District[]>(this.baseURL+'/api/v1/real_state/districts');
   }
 
   agregaInmobiliario(inmobiliario: Inmobiliario){
-    return this.http.post<Inmobiliario>('http://localhost:3000/api/v1/real_state', inmobiliario);
+    return this.http.post<Inmobiliario>(this.baseURL+'/api/v1/real_state', inmobiliario);
   }
 
   editaInmobiliario(inmobiliario: Inmobiliario, id:string){
-    return this.http.put<Inmobiliario>(`http://localhost:3000/api/v1/real_state/${id}`, inmobiliario);
+    return this.http.put<Inmobiliario>(`${this.baseURL}/api/v1/real_state/${id}`, inmobiliario);
   }
 
 
   getInmobiliario(id:string): Observable<Inmobiliario>{
-    return this.http.get<Inmobiliario>(`http://localhost:3000/api/v1/real_state/${id}`);
+    return this.http.get<Inmobiliario>(`${this.baseURL}/api/v1/real_state/${id}`);
   }
 
   deleteInmobiliario(id:string):Observable<any>{
-    return this.http.delete<any>(`http://localhost:3000/api/v1/real_state/${id}`);
+    return this.http.delete<any>(`${this.baseURL}/api/v1/real_state/${id}`);
   }
 
 
