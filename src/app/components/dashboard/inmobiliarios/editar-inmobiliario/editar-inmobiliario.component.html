@@ -10,10 +10,10 @@
                 <input autocomplete="off" matInput formControlName="name">
             </mat-form-field>
             <br>
-            
+
             <mat-form-field appearance="fill">
                 <mat-label>Tipo</mat-label>
-                <mat-select  formControlName="type_real_state" >
+                <mat-select formControlName="type_real_state">
                     <mat-option *ngFor="let item of types" [value]="item">{{ item.description }}
                     </mat-option>
                 </mat-select>
@@ -21,8 +21,9 @@
             <br>
             <mat-form-field appearance="fill">
                 <mat-label>Distrito</mat-label>
-                <mat-select formControlName="district">
-                    <mat-option *ngFor="let item of districts" [value]="item">{{ item.name }}
+                <mat-select formControlName="district" [(ngModel)]="district" [compareWith]="comparaDistrict">
+                    <mat-option *ngFor="let item of districts" [value]="item">
+                            {{ item.name }}
                     </mat-option>
                 </mat-select>
             </mat-form-field>
@@ -32,7 +33,7 @@
                 <input autocomplete="off" matInput formControlName="holders_count">
             </mat-form-field>
             <br>
-           
+
             <mat-form-field class="ancho" #input autocomplete="off" appearance="fill">
                 <mat-label>IdCou</mat-label>
                 <input autocomplete="off" matInput formControlName="id_cou">
@@ -83,7 +84,7 @@
             <br>
             <button color="primary" [disabled]="!form.valid" mat-raised-button type="submit">Guardar</button>
         </form>
-        
+
         <button color="primary" style="margin-top: 10px;" mat-raised-button (click)="goBack()">Volver</button>
     </mat-card>
 

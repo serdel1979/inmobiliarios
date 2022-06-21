@@ -17,7 +17,8 @@ export class EditarInmobiliarioComponent implements OnInit {
   types : TypeRealState[] = [];
   districts : District[] = [];
 
-  
+  public district!: District;
+  public type!: TypeRealState;
 
   inmobiliario!: Inmobiliario;
   id!: string;
@@ -60,6 +61,7 @@ export class EditarInmobiliarioComponent implements OnInit {
       this.form.controls['register_source'].setValue(this.inmobiliario['register_source']);
       this.form.controls['current_state'].setValue(this.inmobiliario['current_state']);
       this.form.controls['district'].setValue(this.inmobiliario['district']);
+      this.district.name = this.inmobiliario['district'];
       this.form.controls['id_mae'].setValue(this.inmobiliario['id_mae']);
       this.form.controls['holders_count'].setValue(this.inmobiliario['holders_count']);
 
@@ -79,5 +81,11 @@ export class EditarInmobiliarioComponent implements OnInit {
       })
   }
 
+  public comparaDistrict(district1: District){
+    if (district1==null || this.district==null) {
+      return false;
+    }
+    return district1.name===this.district.name;
+  }
 
 }
