@@ -13,7 +13,7 @@
 
             <mat-form-field appearance="fill">
                 <mat-label>Tipo</mat-label>
-                <mat-select formControlName="type_real_state">
+                <mat-select formControlName="type_real_state" [compareWith]="comparaType">
                     <mat-option *ngFor="let item of types" [value]="item">{{ item.description }}
                     </mat-option>
                 </mat-select>
@@ -21,13 +21,12 @@
             <br>
             <mat-form-field appearance="fill">
                 <mat-label>Distrito</mat-label>
-                <mat-select formControlName="district" [value]="district.name" [compareWith]="comparaDistrict">
+                <mat-select formControlName="district" [compareWith]="comparaDistrict">
                     <mat-option *ngFor="let item of districts" [value]="item">
                             {{ item.name }}
                     </mat-option>
                 </mat-select>
             </mat-form-field>
-            {{district.name}}
             <br>
             <mat-form-field class="ancho" #input autocomplete="off" appearance="fill">
                 <mat-label>Cantidad de titulares</mat-label>

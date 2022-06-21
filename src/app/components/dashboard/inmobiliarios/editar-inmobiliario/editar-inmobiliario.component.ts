@@ -14,27 +14,26 @@ import { InmobiliariosService } from 'src/app/services/inmobiliarios.service';
 export class EditarInmobiliarioComponent implements OnInit {
 
   public form!: FormGroup;
-  types : TypeRealState[] = [];
-  districts : District[] = [];
+  types: TypeRealState[] = [];
+  districts: District[] = [];
 
-  public district!: District;
-  public type!: TypeRealState;
+  
 
   inmobiliario!: Inmobiliario;
   id!: string;
   inmobiliariosServices: any;
 
-  constructor(private fb: FormBuilder, private rutaActiva: ActivatedRoute, private service: InmobiliariosService, private router: Router) { 
-   
+  constructor(private fb: FormBuilder, private rutaActiva: ActivatedRoute, private service: InmobiliariosService, private router: Router) {
+
   }
 
   async ngOnInit(): Promise<void> {
 
 
-    await this.service.getTypeRealState().subscribe(data=>{
+    await this.service.getTypeRealState().subscribe(data => {
       this.types = data;
     });
-    await this.service.getDistricts().subscribe(data=>{
+    await this.service.getDistricts().subscribe(data => {
       this.districts = data;
     })
 
@@ -51,9 +50,9 @@ export class EditarInmobiliarioComponent implements OnInit {
       id_mae: [''],
       holders_count: [''],
     })
-    
-    this.service.getInmobiliario(this.id).subscribe((data:Inmobiliario) => {
-      this.inmobiliario=data;
+
+    this.service.getInmobiliario(this.id).subscribe((data: Inmobiliario) => {
+      this.inmobiliario = data;
       this.form.controls['name'].setValue(this.inmobiliario['name']);
       this.form.controls['type_real_state'].setValue(this.inmobiliario['type_real_state']);
       this.form.controls['id_cou'].setValue(this.inmobiliario['id_cou']);
@@ -61,8 +60,8 @@ export class EditarInmobiliarioComponent implements OnInit {
       this.form.controls['register_source'].setValue(this.inmobiliario['register_source']);
       this.form.controls['current_state'].setValue(this.inmobiliario['current_state']);
       this.form.controls['district'].setValue(this.inmobiliario['district']);
-      //this.district.name = this.inmobiliario['district'];
-      console.log(this.district.name);
+      //this.dist.name = this.inmobiliario['district'];
+    
       this.form.controls['id_mae'].setValue(this.inmobiliario['id_mae']);
       this.form.controls['holders_count'].setValue(this.inmobiliario['holders_count']);
 
@@ -75,18 +74,23 @@ export class EditarInmobiliarioComponent implements OnInit {
   }
 
   public guardar() {
-    this.service.editaInmobiliario(this.form.value,this.id)
+    this.service.editaInmobiliario(this.form.value, this.id)
       .subscribe(data => {
         console.log(this.form.value);
         this.goBack();
       })
   }
 
-  public comparaDistrict(district1: District){
-    if (district1==null || this.district==null) {
-      return false;
-    }
-    return district1.name===this.district.name;
+  public comparaDistrict(dist1: any, dist2: any) {
+    if (dist1.name == dist2.name && dist1.id == dist2.id)
+      return true;
+    else return false;
+  }
+
+  public comparaType(type1: any, type2: any) {
+    if (type1.description == type2.description && type1.id == type2.id)
+      return true;
+    else return false;
   }
 
 }
