@@ -1,16 +1,23 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { elementAt, Observable } from 'rxjs';
+import { elementAt, Subject, Observable } from 'rxjs';
 import { Inmobiliario } from '../interfaces/inmobiliarios';
 import { TypeRealState } from '../interfaces/type_real_state';
 import { District } from '../interfaces/distritos';
+import { tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class InmobiliariosService {
 
+  private _refresh$ = new Subject<void>();
   constructor(private http: HttpClient) { }
+
+  getRefresh$(){
+    return this._refresh$.asObservable();
+  }
+
 
   AllInmobiliarios: Inmobiliario[] = [];
 

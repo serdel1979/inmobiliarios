@@ -4,6 +4,7 @@ import {  Router } from '@angular/router';
 import { InmobiliariosService } from 'src/app/services/inmobiliarios.service';
 import { TypeRealState } from 'src/app/interfaces/type_real_state';
 import { District } from 'src/app/interfaces/distritos';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-crear-inmobiliario',

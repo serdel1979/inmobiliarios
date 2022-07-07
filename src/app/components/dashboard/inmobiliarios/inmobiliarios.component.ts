@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSort } from '@angular/material/sort';
@@ -8,7 +8,7 @@ import { Inmobiliario } from 'src/app/interfaces/inmobiliarios';
 import { InmobiliariosService } from 'src/app/services/inmobiliarios.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogoConfirmacionComponent } from 'src/app/components/dialogo-confirmacion/dialogo-confirmacion.component';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { TypeRealState } from 'src/app/interfaces/type_real_state';
 
 @Component({
@@ -16,11 +16,13 @@ import { TypeRealState } from 'src/app/interfaces/type_real_state';
   templateUrl: './inmobiliarios.component.html',
   styleUrls: ['./inmobiliarios.component.css']
 })
-export class InmobiliariosComponent implements OnInit {
+export class InmobiliariosComponent implements OnInit{
 
   listInmobiliarios: Inmobiliario[] = [];
   inmobiliario!: Inmobiliario;
   type_real_state: TypeRealState[] = [];
+
+  suscription!: Subscription;
 
   displayedColumns: string[] = ['nombre', 'distrito','tipo', 'estado', 'idCou', 'idMae', 'Acciones'];
 
@@ -34,6 +36,7 @@ export class InmobiliariosComponent implements OnInit {
 
 
   constructor(public dialogo: MatDialog, public inmobiliariosServices: InmobiliariosService, private _snackBar: MatSnackBar, private router: Router) { }
+  
 
   ngOnInit(): void {
     this.cargarDatos();
